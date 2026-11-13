@@ -20,7 +20,7 @@ export interface Poster {
 }
 
 const INK = "#0e191b";
-const ACCENT = "#176b75";
+const ACCENT = "#0033ff";
 
 async function tree(p: Poster): Promise<Node> {
   const title = clamp(p.title, 72);
@@ -40,7 +40,7 @@ async function tree(p: Poster): Promise<Node> {
       fontFamily: "Noto Sans SC",
       color: INK,
       backgroundColor: "#f5f6f5",
-      backgroundImage: "radial-gradient(circle at 100% 0%, rgba(23,107,117,0.16), rgba(245,246,245,0) 52%), radial-gradient(circle at 0% 100%, rgba(44,226,232,0.10), rgba(245,246,245,0) 45%)",
+      backgroundImage: "radial-gradient(circle at 100% 0%, rgba(0,51,255,0.14), rgba(245,246,245,0) 52%), radial-gradient(circle at 0% 100%, rgba(58,125,255,0.12), rgba(245,246,245,0) 45%)",
     },
     [
       h("div", { display: "flex", alignItems: "center", justifyContent: "space-between" }, [
