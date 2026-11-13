@@ -4,8 +4,8 @@ import { SITE } from "../site.ts";
 
 export function Wordmark({ size = 24, className = "", title = SITE.name }: { size?: number; className?: string; title?: string }) {
   return (
-    <span className={`inline-flex items-center font-black leading-none tracking-[-0.03em] ${className}`} style={{ fontSize: Math.round(size * 0.92) }} aria-label={title} role="img">
-      <img src="/icon-192.png" alt="" aria-hidden="true" className="mr-[0.28em] inline-block size-[1.12em] align-[-0.18em]" />
+    <span className={`inline-flex items-center font-black leading-none tracking-[-0.03em] text-accent ${className}`} style={{ fontSize: Math.round(size * 0.92) }} aria-label={title} role="img">
+      <img src="/icon-192.png?v=2" alt="" aria-hidden="true" className="mr-[0.28em] inline-block size-[1.12em] align-[-0.18em]" />
       <span aria-hidden="true">{SITE.name}</span>
     </span>
   );

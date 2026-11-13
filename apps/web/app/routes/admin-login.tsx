@@ -35,7 +35,7 @@ export default function AdminLogin() {
     <div className="flex min-h-dvh items-center justify-center bg-bg px-4">
       <div className="w-full max-w-[360px]">
         <div className="flex items-center justify-center gap-2">
-          <Wordmark size={28} className="text-ink" />
+          <Wordmark size={28} />
           <span className="text-[15px] font-semibold text-ink-3">后台</span>
         </div>
         <form method="post" action="/api/auth/password" className="card mt-8 p-6">

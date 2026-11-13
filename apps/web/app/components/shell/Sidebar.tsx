@@ -51,7 +51,7 @@ function Rail({ dot }: { dot: boolean }) {
   return (
     <aside ref={railRef} className={`scrollbar-thin sticky top-0 hidden h-dvh w-16 shrink-0 flex-col items-center border-r border-line bg-sidebar px-1.5 pb-[max(14px,env(safe-area-inset-bottom))] pt-5 lg:flex wide:hidden short:overflow-y-auto short:pt-3 ${railOverscroll}`}>
       <Link to="/" className="mb-3 flex size-11 shrink-0 items-center justify-center text-accent short:mb-1" aria-label={`${SITE.name} 首页`}>
-        <img src="/icon-192.png" alt="" aria-hidden="true" className="size-7" />
+        <img src="/icon-192.png?v=2" alt="" aria-hidden="true" className="size-7" />
       </Link>
       <nav className="flex w-full flex-col gap-1" aria-label="主导航">
         {rail().map((t) => {
