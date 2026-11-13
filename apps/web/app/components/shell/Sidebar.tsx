@@ -124,6 +124,9 @@ export function Sidebar({ changelogVersion }: { changelogVersion: string | null 
           <ThemeSwitch className="mx-1 touch:h-11" />
           {/* Centred under the buttons; the full width keeps the longer public-security number on one line. */}
           <div className="-mx-1 flex flex-col items-center gap-1.5">
+            {SITE.footerNote && (
+              <span className="whitespace-nowrap text-[9.5px] leading-[1.3] text-ink-4">{SITE.footerNote}</span>
+            )}
             {SITE.poweredBy && (
               <a href={SITE.poweredBy.url} target="_blank" rel="noopener" className="whitespace-nowrap text-[9.5px] leading-[1.3] text-ink-4 hover:text-ink-3">
                 由 {SITE.poweredBy.name} 驱动
