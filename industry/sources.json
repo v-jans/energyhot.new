@@ -589,6 +589,1210 @@
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
+    },
+    {
+      "id": "cbgex-news",
+      "name": "北京绿色交易所 · 公示公告",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cbgex.com.cn/portal/rest/catalog/ListCatalogAndComTree",
+        "method": "POST",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36",
+          "Referer": "https://www.cbgex.com.cn/xxzx"
+        },
+        "bodyJson": {
+          "searchVo": {
+            "code": "bsgg"
+          },
+          "ifPage": "yes",
+          "pageParameter": {
+            "pageNum": 1,
+            "pageSize": 12
+          }
+        },
+        "itemsPath": "body.dataSet.result.0.CatalogContentPage.result",
+        "titlePaths": [
+          "title"
+        ],
+        "summaryPaths": [
+          "contentSummary"
+        ],
+        "publishedAtPath": "onlineTime",
+        "externalIdPath": "contentId",
+        "urlTemplate": "https://www.cbgex.com.cn/details/{raw:contentId}",
+        "allowUrlPrefixes": [
+          "https://www.cbgex.com.cn/details/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "碳资产",
+        "交易"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "cneeex-carbon",
+      "name": "上海环境能源交易所",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.cneeex.com/",
+        "itemSelector": "li",
+        "linkSelector": "a[href^='/c/']",
+        "titleSelector": "label",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://www.cneeex.com/c/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "碳资产",
+        "交易"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "cz-fgw-policy",
+      "name": "常州市发展改革委 · 通知公告",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.changzhou.gov.cn/gova/tzgg.php?catname=fgw_02_10",
+        "itemSelector": "tr:has(a[href^='/gi_news'])",
+        "linkSelector": "td a",
+        "titleSelector": "td a",
+        "publishedAtSelector": "td:nth-of-type(4)",
+        "allowUrlPrefixes": [
+          "https://www.changzhou.gov.cn/gi_news/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方",
+        "政策",
+        "微电网"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "js-fgw-policy",
+      "name": "江苏省发展改革委 · 政策与公告",
+      "kind": "web_list",
+      "config": {
+        "url": "https://fzggw.jiangsu.gov.cn/",
+        "itemSelector": "ul.xxlv_con li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://fzggw.jiangsu.gov.cn/art/",
+          "http://fzggw.jiangsu.gov.cn/art/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "官方",
+        "地方",
+        "政策"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "zj-fgw-policy",
+      "name": "浙江省发展改革委 · 通知公告",
+      "kind": "web_list",
+      "config": {
+        "url": "https://fzggw.zj.gov.cn/",
+        "itemSelector": "ul.tab1 li",
+        "linkSelector": "a",
+        "titleSelector": "span.tabtime",
+        "publishedAtSelector": "span.time",
+        "allowUrlPrefixes": [
+          "https://fzggw.zj.gov.cn/col/"
+        ],
+        "detail": {
+          "maxFetches": 10,
+          "publishedAtRegex": "(20\\d{2}-\\d{2}-\\d{2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "官方",
+        "地方",
+        "政策"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "cnesa-news",
+      "name": "中关村储能产业技术联盟 · 资讯",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.cnesa.org/information/?column_id=1",
+        "itemSelector": "div.policy-list a",
+        "linkSelector": "a",
+        "titleSelector": "div.text-bar1 div.text-bar1",
+        "publishedAtSelector": "div.text-999",
+        "allowUrlPrefixes": [
+          "https://www.cnesa.org/information/detail/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "协会",
+        "储能",
+        "研究"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "cnesa"
+    },
+    {
+      "id": "ncepu-energy",
+      "name": "华北电力大学能源发展战略研究院",
+      "kind": "web_list",
+      "config": {
+        "url": "https://energy.ncepu.edu.cn/zxdt/index.htm",
+        "itemSelector": "ul.newsList03 li",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://energy.ncepu.edu.cn/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "研究",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "bjx-chuneng",
+      "name": "北极星储能网",
+      "kind": "web_list",
+      "config": {
+        "url": "https://chuneng.bjx.com.cn/yw/",
+        "itemSelector": ".cc-list-content ul > li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://news.bjx.com.cn/html/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "储能",
+        "价格"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "bjx-shoudian",
+      "name": "北极星电力市场网",
+      "kind": "web_list",
+      "config": {
+        "url": "https://shoudian.bjx.com.cn/yw/",
+        "itemSelector": ".cc-list-content ul > li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://news.bjx.com.cn/html/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "bjx-vpp",
+      "name": "北极星 · 虚拟电厂",
+      "kind": "web_list",
+      "config": {
+        "url": "https://shoudian.bjx.com.cn/xndc/",
+        "itemSelector": ".cc-list-content ul > li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://news.bjx.com.cn/html/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "虚拟电厂"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "chinasmartgrid-news",
+      "name": "北极星智能电网在线",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.chinasmartgrid.com.cn/",
+        "itemSelector": "ul.contl_right_sckb li, ul.contl_right_typl li",
+        "allowUrlPrefixes": [
+          "http://www.chinasmartgrid.com.cn/news/"
+        ],
+        "detail": {
+          "maxFetches": 12,
+          "publishedAtRegex": "(20[12][0-9]/[0-9]{1,2}/[0-9]{1,2} [0-9]{1,2}:[0-9]{2}:[0-9]{2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "微电网",
+        "源网荷储"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "desn-news",
+      "name": "数字储能网",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.desn.com.cn/",
+        "baseUrl": "http://www.desn.com.cn",
+        "itemSelector": "ul.news-list > li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "allowUrlPrefixes": [
+          "http://www.desn.com.cn/news/"
+        ],
+        "detail": {
+          "maxFetches": 10,
+          "publishedAtRegex": "(20\\d{2}-\\d{1,2}-\\d{1,2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "储能"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "pvbox-news",
+      "name": "光伏盒子",
+      "kind": "json_list",
+      "config": {
+        "url": "https://pvbox.com.cn/api/news/list",
+        "itemsPath": "data.records",
+        "titlePaths": [
+          "title"
+        ],
+        "publishedAtPath": "publishTime",
+        "urlTemplate": "https://pvbox.com.cn/news/{raw:id}",
+        "allowUrlPrefixes": [
+          "https://pvbox.com.cn/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "分布式光伏",
+        "户用光伏"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-aolar",
+      "name": "欧乐光储充",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "http://www.aolar.com.cn/feed/rss.php?mid=21",
+        "allowUrlPrefixes": [
+          "http://www.aolar.com.cn/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "媒体",
+        "工商业光伏",
+        "充电"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-energystorage",
+      "name": "Energy-Storage.news",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.energy-storage.news/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "国际",
+        "媒体",
+        "储能"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-pvmagchina",
+      "name": "pv magazine China",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.pv-magazine-china.com/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "国际",
+        "媒体",
+        "分布式光伏"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "infolink",
+      "name": "InfoLink Consulting",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.infolink-group.com/event/newsroom",
+        "itemSelector": "div.item",
+        "linkSelector": "a",
+        "titleSelector": ".title",
+        "publishedAtSelector": "li",
+        "allowUrlPrefixes": [
+          "https://www.infolink-group.com/latest-event/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 4
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "国际",
+        "数据",
+        "价格"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "smm-price",
+      "name": "上海有色网 SMM",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.smm.cn/",
+        "itemSelector": "ul.news-list li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "allowUrlPrefixes": [
+          "https://news.smm.cn/news/"
+        ],
+        "detail": {
+          "maxFetches": 10,
+          "publishedAtRegex": "(20\\d{2}-\\d{1,2}-\\d{1,2} \\d{1,2}:\\d{2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "数据",
+        "价格",
+        "储能"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "icap-news",
+      "name": "ICAP · 国际碳行动伙伴关系",
+      "kind": "web_list",
+      "config": {
+        "url": "https://icapcarbonaction.com/en/news",
+        "itemSelector": "article.news-embed-grid",
+        "linkSelector": "a.link-title",
+        "titleSelector": "h3.content-title",
+        "publishedAtSelector": "time",
+        "allowUrlPrefixes": [
+          "https://icapcarbonaction.com/en/news/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "国际",
+        "碳资产"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "pvsyst-notes",
+      "name": "PVsyst · Release Notes",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.pvsyst.com/help/release-notes/index.html",
+        "parseMode": "docusaurus_changelog",
+        "allowUrlPrefixes": [
+          "https://www.pvsyst.com/help/release-notes/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "国际",
+        "智能设计",
+        "系统仿真"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "re100-news",
+      "name": "RE100 · Climate Group 新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.theclimategroup.org/our-work/news",
+        "itemSelector": "article.cw-blog-listing__card",
+        "linkSelector": ".cw-blog-listing__title a",
+        "titleSelector": ".cw-blog-listing__title",
+        "publishedAtSelector": ".cw-blog-listing__date",
+        "allowUrlPrefixes": [
+          "https://www.theclimategroup.org/our-work/news/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "国际",
+        "绿证/绿电"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "solargis-blog",
+      "name": "Solargis · Blog",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.solargis.com/resources/blog",
+        "itemSelector": "div.main-card",
+        "titleSelector": "h2.title",
+        "allowUrlPrefixes": [
+          "https://www.solargis.com/resources/blog/"
+        ],
+        "detail": {
+          "maxFetches": 8,
+          "publishedAtRegex": "\"datePublished\"\\s*:\\s*\"([^\"]+)\""
+        },
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "国际",
+        "智能设计"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "starcharge-news",
+      "name": "星星充电 · 产品新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.starcharge.com/about-us/news/product-news",
+        "itemSelector": "ul.news-inof > li.news-inof-item",
+        "linkSelector": "a.news-inof-item-link",
+        "titleSelector": "h3.news-inof-title",
+        "publishedAtSelector": ".news-inof-date",
+        "allowUrlPrefixes": [
+          "https://www.starcharge.com/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "充电",
+        "国际"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "envision-news",
+      "name": "远景科技集团 · 新闻",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.envision-group.com/cn/pagenews.json?page=1",
+        "itemsPath": "data.results",
+        "titlePaths": [
+          "title"
+        ],
+        "summaryPaths": [
+          "description"
+        ],
+        "publishedAtPath": "date",
+        "urlTemplate": "https://www.envision-group.com{raw:url}",
+        "allowUrlPrefixes": [
+          "https://www.envision-group.com/cn/newsitem/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "零碳园区"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "envision"
+    },
+    {
+      "id": "goldwind-news",
+      "name": "金风科技 · 新闻",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.goldwind.com/api2/cmsContent/readContentList?current=1&termId=920341604710173700&sort=desc",
+        "itemsPath": "data.list",
+        "titlePaths": [
+          "title"
+        ],
+        "summaryPaths": [
+          "excerpt"
+        ],
+        "publishedAtPath": "postDate",
+        "publishedAtUnit": "epoch_s",
+        "externalIdPath": "id",
+        "urlTemplate": "https://www.goldwind.com/cn/news/focus-{raw:id}",
+        "allowUrlPrefixes": [
+          "https://www.goldwind.com/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "风电",
+        "微电网"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "hnic-news",
+      "name": "河南投资集团 · 新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.hnic.com.cn/news/groupNews/",
+        "itemSelector": "#newsList li",
+        "linkSelector": "a",
+        "titleSelector": "h2",
+        "publishedAtSelector": "div.date",
+        "allowUrlPrefixes": [
+          "https://www.hnic.com.cn/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方能源平台"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "huawei-dp",
+      "name": "华为数字能源 · 新闻",
+      "kind": "json_list",
+      "config": {
+        "url": "https://digitalpower.huawei.com/service/portalapplication/v1/digitalpower/news",
+        "method": "POST",
+        "bodyJson": {
+          "contentId": "74afefdee7e845cf8f15c9343b228dbd",
+          "filterLabelList": [],
+          "keyword": "",
+          "pageNum": 1,
+          "pageSize": 10,
+          "returnSelf": false,
+          "queryMode": "NOT_TOP"
+        },
+        "itemsPath": "data.results",
+        "titlePaths": [
+          "title"
+        ],
+        "summaryPaths": [
+          "htmlMeta.description",
+          "description"
+        ],
+        "publishedAtPath": "releaseTime",
+        "urlTemplate": "https://{raw:pageUrl}",
+        "allowUrlPrefixes": [
+          "https://digitalpower.huawei.com/cn/news"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "产品"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "owner_entity_id": "huawei-digital-power"
+    },
+    {
+      "id": "ideacarbon-news",
+      "name": "碳道",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.ideacarbon.org/",
+        "itemSelector": "div.news-list li",
+        "linkSelector": "a",
+        "titleSelector": "p.news-title",
+        "publishedAtSelector": "p.news-author-time",
+        "allowUrlPrefixes": [
+          "https://www.ideacarbon.org/news_free/",
+          "https://www.ideacarbon.org/newspc/"
+        ],
+        "detail": {
+          "maxFetches": 10,
+          "publishedAtSelector": "p.news-time"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "碳资产"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "longshine-news",
+      "name": "朗新科技 · 新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.longshine.com/news.html",
+        "itemSelector": "ul#news li",
+        "linkSelector": "a",
+        "titleSelector": "h3.x-tit2",
+        "publishedAtSelector": "div.x-text span",
+        "allowUrlPrefixes": [
+          "https://www.longshine.com/newsInfo/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "能源管理",
+        "充电"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "nea-hbj",
+      "name": "华北能源监管局 · 监管动态",
+      "kind": "web_list",
+      "config": {
+        "url": "https://hbj.nea.gov.cn/dtyw/jgdt/",
+        "itemSelector": "li a[href$='.html']",
+        "titleSelector": "span",
+        "publishedAtRegex": "(20[12][0-9]-[0-9]{1,2}-[0-9]{1,2})",
+        "allowUrlPrefixes": [
+          "https://hbj.nea.gov.cn/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "nea-hdj",
+      "name": "华东能源监管局 · 监管动态",
+      "kind": "web_list",
+      "config": {
+        "url": "https://hdj.nea.gov.cn/dtyw/jgdt/",
+        "itemSelector": "li a[href$='.html']",
+        "titleSelector": "span",
+        "publishedAtRegex": "(20[12][0-9]-[0-9]{1,2}-[0-9]{1,2})",
+        "allowUrlPrefixes": [
+          "https://hdj.nea.gov.cn/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "nea-nfj",
+      "name": "南方能源监管局 · 监管动态",
+      "kind": "web_list",
+      "config": {
+        "url": "https://nfj.nea.gov.cn/xwzx/jgdt/",
+        "itemSelector": "li a[href$='.html']",
+        "titleSelector": "span",
+        "publishedAtRegex": "(20[12][0-9]-[0-9]{1,2}-[0-9]{1,2})",
+        "allowUrlPrefixes": [
+          "https://nfj.nea.gov.cn/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "powerbeijing-news",
+      "name": "北京京能 · 新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.powerbeijing.com/newas.html",
+        "itemSelector": "a.news_text_a",
+        "titleSelector": "h4",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://www.powerbeijing.com/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方能源平台"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "sde-group",
+      "name": "山东能源集团 · 新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.shandong-energy.com/78593/78597",
+        "itemSelector": "a.list-item",
+        "titleSelector": "h3.list-item-title",
+        "allowUrlPrefixes": [
+          "https://www.shandong-energy.com/"
+        ],
+        "detail": {
+          "maxFetches": 8,
+          "publishedAtRegex": "发布日期[：:]\\s*(\\d{4}年\\d{1,2}月\\d{1,2}日)"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "地方能源平台"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "sgep-news",
+      "name": "青岛中德生态园 · 区域动态",
+      "kind": "json_list",
+      "config": {
+        "url": "https://api.cimos.cn/qdcsdn-res-zdweb/zdWebsiteNews/web?pageIndex=1&pageSize=15&newsClassification=%E5%8C%BA%E5%9F%9F%E5%8A%A8%E6%80%81",
+        "itemsPath": "list",
+        "titlePaths": [
+          "newsTitle"
+        ],
+        "summaryPaths": [
+          "contentSummary"
+        ],
+        "publishedAtPath": "newsDate",
+        "urlTemplate": "http://www.sgep.cn/dynamic_news/news_details.html?type=1&id={raw:id}",
+        "allowUrlPrefixes": [
+          "http://www.sgep.cn/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方",
+        "零碳园区"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "sinocarbon-blog",
+      "name": "中创碳投 · 动态",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.sinocarbon.cn/",
+        "itemSelector": "div.s-blog-entry",
+        "linkSelector": ".s-blog-title a",
+        "titleSelector": ".s-blog-title a",
+        "publishedAtSelector": ".s-blog-date",
+        "allowUrlPrefixes": [
+          "https://www.sinocarbon.cn/blog/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "碳资产"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "sipac-news",
+      "name": "苏州工业园区 · 要闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.sipac.gov.cn/szgyyq/ywdd/xwzx_list.shtml",
+        "itemSelector": ".infoList li",
+        "linkSelector": "h4 a",
+        "publishedAtSelector": "span.time",
+        "allowUrlPrefixes": [
+          "https://www.sipac.gov.cn/szgyyq/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方",
+        "零碳园区"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "sprixin-news",
+      "name": "国能日新 · 公司新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.sprixin.com/news/Company/",
+        "itemSelector": ".gsxw_list > div",
+        "linkSelector": "a",
+        "titleSelector": "h6",
+        "detail": {
+          "maxFetches": 10,
+          "publishedAtRegex": "时间：(20[12][0-9]-[0-9]{1,2}-[0-9]{1,2})"
+        },
+        "allowUrlPrefixes": [
+          "https://www.sprixin.com/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 5
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "虚拟电厂"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "tjftz-news",
+      "name": "天津港保税区 · 要闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.tjftz.gov.cn/channels/6302.html",
+        "itemSelector": "div.layui-row",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "div.layui-col-md2 span",
+        "allowUrlPrefixes": [
+          "https://www.tjftz.gov.cn/"
+        ],
+        "ingestNoiseFilter": {
+          "dropMarkersTitleOnly": [
+            "学习贯彻",
+            "宣讲团",
+            "专题学习",
+            "主题党日",
+            "党课"
+          ]
+        },
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方",
+        "零碳园区"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "wenergy-news",
+      "name": "皖能集团 · 快讯",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.wenergy.com.cn/xwzxlj/jtkx.htm",
+        "itemSelector": "ul.nt1 li",
+        "linkSelector": "a",
+        "titleSelector": "h4",
+        "allowUrlPrefixes": [
+          "https://www.wenergy.com.cn/"
+        ],
+        "detail": {
+          "maxFetches": 8,
+          "publishedAtRegex": "发布日期[：:]\\s*(\\d{4}\\.\\d{1,2}\\.\\d{1,2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "官方",
+        "地方能源平台"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "zjenergy-news",
+      "name": "浙能集团 · 新闻",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.zjenergy.com.cn/ZNWW/channels/138.html",
+        "itemSelector": "li.g-brd-bottom",
+        "linkSelector": "a",
+        "titleSelector": "span.h5",
+        "publishedAtSelector": "span.date",
+        "allowUrlPrefixes": [
+          "https://www.zjenergy.com.cn/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "官方",
+        "地方能源平台"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
     }
   ]
 }
