@@ -43,6 +43,48 @@
       "syndicate_fulltext": false
     },
     {
+      "id": "trinapower-mp",
+      "name": "天合富家 · 公众号",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "tianheguangfu",
+        "nickname": "天合富家",
+        "publisherRole": "organization"
+      },
+      "tier": "T1_5",
+      "owner_entity_id": "tianhe-fujia",
+      "participation_mode": "editorial",
+      "interval_minutes": 60,
+      "tags": [
+        "官方",
+        "公众号",
+        "分布式"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-trina-huyong",
+      "name": "天合富家 · 户用光伏官方号",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_707205e81726",
+        "nickname": "天合富家户用光伏官方号",
+        "publisherRole": "organization"
+      },
+      "tier": "T1_5",
+      "owner_entity_id": "tianhe-fujia",
+      "participation_mode": "editorial",
+      "interval_minutes": 60,
+      "tags": [
+        "官方",
+        "公众号",
+        "户用光伏"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
       "id": "ndrc-policy",
       "name": "国家发展改革委 · 政策发布",
       "kind": "web_list",
@@ -838,6 +880,151 @@
         "媒体",
         "储能",
         "价格"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "bjx-guangfu",
+      "name": "北极星光伏网",
+      "kind": "web_list",
+      "config": {
+        "url": "https://guangfu.bjx.com.cn/yw/",
+        "itemSelector": ".cc-list-content ul > li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://news.bjx.com.cn/html/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "分布式光伏"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-bjx-guangfu",
+      "name": "北极星太阳能光伏网 · 公众号",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "bjx-guangfu",
+        "nickname": "北极星太阳能光伏网"
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "媒体",
+        "公众号",
+        "分布式光伏"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-zhihuiguangfu",
+      "name": "智汇光伏",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "PV-perspective",
+        "nickname": "智汇光伏"
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "自媒体",
+        "公众号",
+        "分布式光伏",
+        "数据"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-energystoragemarket",
+      "name": "储能与电力市场",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "EnergyStorageMarket",
+        "nickname": "储能与电力市场"
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "自媒体",
+        "公众号",
+        "储能",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-gg-ess",
+      "name": "高工储能",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "weixin-gg-ess",
+        "nickname": "高工储能"
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "自媒体",
+        "公众号",
+        "储能",
+        "数据"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-energyobserver",
+      "name": "南方能源观察",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "energyobserver",
+        "nickname": "南方能源观察"
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "自媒体",
+        "公众号",
+        "电力市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "mp-yuyan-diangan",
+      "name": "鱼眼看电改",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_3d8809822dc1",
+        "nickname": "鱼眼看电改"
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 240,
+      "tags": [
+        "自媒体",
+        "公众号",
+        "电力市场",
+        "虚拟电厂"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
