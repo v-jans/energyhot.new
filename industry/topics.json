@@ -2,337 +2,352 @@
   "groups": [
     {
       "key": "company",
-      "name": "公司与模型",
-      "blurb": "按厂商追踪模型、产品与公司动态"
+      "name": "公司与平台",
+      "blurb": "按厂商追踪产品、项目与经营动态"
     },
     {
       "key": "field",
-      "name": "技术方向",
-      "blurb": "按技术领域深挖：Agent、多模态、具身智能……"
+      "name": "赛道与场景",
+      "blurb": "按业务领域深挖：户用、工商业、储能、虚拟电厂……"
     },
     {
       "key": "genre",
       "name": "内容类型",
-      "blurb": "按体裁浏览：论文、教程、观点、政策……"
+      "blurb": "按体裁浏览：政策、项目、行情、报告、观点……"
     }
   ],
   "topics": [
     {
-      "slug": "openai",
-      "name": "OpenAI / ChatGPT",
+      "slug": "tianhe-fujia",
+      "name": "天合富家",
       "group": "company",
-      "entityId": "openai",
-      "definition": "OpenAI 的 GPT 系列模型、ChatGPT 与 Sora 产品更新，以及公司战略与人事变化。"
-    },
-    {
-      "slug": "anthropic",
-      "name": "Anthropic / Claude",
-      "group": "company",
-      "entityId": "anthropic",
-      "definition": "Anthropic 的 Claude 系列模型、Claude Code 更新，以及安全研究与公司动向。"
-    },
-    {
-      "slug": "google",
-      "name": "Google / Gemini",
-      "group": "company",
-      "entityId": "google",
+      "entityId": "tianhe-fujia",
       "aliases": [
-        "DeepMind"
+        "天合富家能源股份有限公司",
+        "天合智慧分布式"
       ],
-      "definition": "Google 与 DeepMind 的 Gemini 模型、Veo 视频生成、前沿研究与各条产品线的 AI 更新。"
+      "definition": "天合富家的户用与工商业分布式光伏、原装解决方案、数字能源平台与渠道动态，是本网站最优先追踪的公司。"
     },
     {
-      "slug": "deepseek",
-      "name": "DeepSeek",
+      "slug": "trina-solar",
+      "name": "天合光能",
       "group": "company",
-      "entityId": "deepseek",
-      "definition": "DeepSeek（深度求索）的模型发布、开源权重、技术报告与 API 价格变化。"
+      "entityId": "trina-solar",
+      "definition": "天合光能的组件、跟踪支架、储能系统与全球项目，以及和天合富家相关的战略与供应链变化。"
     },
     {
-      "slug": "qwen",
-      "name": "千问 Qwen",
+      "slug": "huawei-digital-power",
+      "name": "华为数字能源",
       "group": "company",
-      "entityId": "qwen",
-      "definition": "阿里千问 Qwen 系列的模型发布与开源更新，从旗舰大模型到能装进手机的小模型。"
+      "entityId": "huawei-digital-power",
+      "definition": "华为数字能源的智能光伏、储能、充电网络与数据中心能源产品，以及面向分布式场景的方案。"
     },
     {
-      "slug": "kimi",
-      "name": "月之暗面 / Kimi",
+      "slug": "sungrow",
+      "name": "阳光电源",
       "group": "company",
-      "entityId": "kimi",
-      "aliases": ["Kimi / 月之暗面"],
-      "definition": "月之暗面的 Kimi 产品更新、K 系列开源模型与长文本技术进展。"
+      "entityId": "sungrow",
+      "definition": "阳光电源的光伏逆变器、储能系统、家庭光伏与新能源开发业务。"
     },
     {
-      "slug": "minimax",
-      "name": "MiniMax",
+      "slug": "catl",
+      "name": "宁德时代",
       "group": "company",
-      "entityId": "minimax",
-      "definition": "MiniMax 的 M 系列大模型、语音与多模态能力，以及开源与商业化进展。"
+      "entityId": "catl",
+      "definition": "宁德时代的储能电池、换电与零碳园区业务，以及储能系统和电芯层面的产品与项目。"
     },
     {
-      "slug": "zhipu",
-      "name": "智谱 GLM",
+      "slug": "teld",
+      "name": "特来电",
       "group": "company",
-      "entityId": "zhipu",
-      "definition": "智谱 GLM 系列模型的发布与开源更新，以及编程、推理能力和商业化进展。"
+      "entityId": "teld",
+      "definition": "特来电的充电网络、充电桩产品、充电站运营与车网互动试点。"
     },
     {
-      "slug": "xai",
-      "name": "xAI / Grok",
+      "slug": "envision",
+      "name": "远景",
       "group": "company",
-      "entityId": "xai",
-      "definition": "马斯克旗下 xAI 的 Grok 模型更新、算力集群建设与 X 平台整合。"
+      "entityId": "envision",
+      "definition": "远景科技集团的零碳产业园、智能物联操作系统、储能与绿色能源解决方案。"
     },
     {
-      "slug": "meta",
-      "name": "Meta / Llama",
+      "slug": "chint-anneng",
+      "name": "正泰安能",
       "group": "company",
-      "entityId": "meta",
-      "definition": "Meta 的 Llama 与 Muse 系列模型、超级智能实验室与 Meta AI 产品。"
+      "entityId": "chint-anneng",
+      "definition": "正泰安能的户用光伏、工商业分布式与代理商网络，以及农村能源市场做法。"
     },
     {
-      "slug": "microsoft",
-      "name": "Microsoft / Copilot",
+      "slug": "state-grid",
+      "name": "国家电网",
       "group": "company",
-      "entityId": "microsoft",
-      "definition": "微软的 Copilot 系列产品、Azure AI 云服务，以及与 OpenAI 的合作动向。"
+      "entityId": "state-grid",
+      "definition": "国家电网的配电网建设、分布式并网规则、综合能源服务与电力市场动作。"
     },
     {
-      "slug": "nvidia",
-      "name": "NVIDIA 英伟达",
+      "slug": "csg",
+      "name": "南方电网",
       "group": "company",
-      "entityId": "nvidia",
-      "definition": "英伟达的 GPU 新品、CUDA 软件生态、机器人平台与 AI 算力供需。"
+      "entityId": "csg",
+      "definition": "南方电网的配网、分布式新能源并网、绿电交易与虚拟电厂试点。"
     },
     {
-      "slug": "hugging-face",
-      "name": "Hugging Face",
+      "slug": "energy-china",
+      "name": "中国能建",
       "group": "company",
-      "entityId": "hugging-face",
-      "definition": "Hugging Face 社区的热门开源模型、数据集、工具与榜单变化。"
+      "entityId": "energy-china",
+      "definition": "中国能建在新能源 EPC、零碳园区、储能与综合能源项目上的中标和投运。"
     },
     {
-      "slug": "cursor",
-      "name": "Cursor",
+      "slug": "powerchina",
+      "name": "中国电建",
       "group": "company",
-      "entityId": "cursor",
-      "definition": "Cursor（Anysphere）的编辑器与编码 Agent 更新、自研模型与定价变化。"
+      "entityId": "powerchina",
+      "definition": "中国电建的新能源工程、抽水蓄能与储能项目，以及海外新能源 EPC 动态。"
     },
     {
-      "slug": "openrouter",
-      "name": "OpenRouter",
-      "group": "company",
-      "entityId": "openrouter",
-      "definition": "OpenRouter 平台的新模型上架、价格变化与开发者调用量排行。"
-    },
-    {
-      "slug": "agent",
-      "name": "Agent 智能体",
+      "slug": "distributed-pv",
+      "name": "分布式光伏",
       "group": "field",
       "tags": [
-        "Agent"
+        "分布式光伏"
       ],
-      "definition": "能自己拆解任务、调用工具、一步步把事办完的 AI 智能体：Claude Code、Manus 等应用，各家 Agent 框架与评测。"
+      "definition": "建在用户侧、就近消纳的光伏：户用与工商业分布式、整县推进、隔墙售电与并网政策。"
     },
     {
-      "slug": "coding",
-      "name": "AI 编码",
+      "slug": "household-pv",
+      "name": "户用光伏",
       "group": "field",
       "tags": [
-        "编码"
+        "户用光伏"
       ],
-      "definition": "用 AI 写代码：编程助手、Vibe Coding、代码模型评测，以及开发方式的变化。"
+      "definition": "装在屋顶上的家用光伏：户用系统、租赁与共建模式、代理商渠道、农村市场与金融方案。"
     },
     {
-      "slug": "reasoning",
-      "name": "推理能力",
+      "slug": "cni-pv",
+      "name": "工商业光伏",
       "group": "field",
       "tags": [
-        "推理"
+        "工商业光伏"
       ],
-      "definition": "让大模型先想再答的能力：思维链、推理模型，数学与逻辑评测上的突破和争议。"
+      "definition": "工厂、园区和商业屋顶的光伏：工商业分布式开发、合同能源管理、绿电直连与消纳。"
     },
     {
-      "slug": "multimodal",
-      "name": "多模态",
+      "slug": "storage",
+      "name": "储能",
       "group": "field",
       "tags": [
-        "多模态"
+        "储能"
       ],
-      "definition": "文字之外的能力：看懂图片、图文混合理解、音视频输入输出的模型与产品进展。"
+      "definition": "新型储能的产品、项目与商业模式：工商业储能、户用储能、共享储能、电芯与系统集成。"
     },
     {
-      "slug": "image-gen",
-      "name": "图像生成",
+      "slug": "charging",
+      "name": "充电网络",
       "group": "field",
       "tags": [
-        "图像生成"
+        "充电"
       ],
-      "definition": "AI 画图与修图：文生图模型更新、图像编辑能力与创作工具。"
+      "definition": "电动汽车充电桩、充电站与充电网络：超充、液冷、光储充一体化与运营模式。"
     },
     {
-      "slug": "video",
-      "name": "AI 视频",
+      "slug": "v2g",
+      "name": "车网互动",
       "group": "field",
       "tags": [
-        "视频"
+        "车网互动"
       ],
-      "definition": "AI 生成和理解视频：文生视频模型、视频编辑工具，以及影视创作的新做法。"
+      "definition": "让电动车参与电网调节：V2G、有序充电、聚合调控与车网互动试点。"
     },
     {
-      "slug": "voice",
-      "name": "语音与音频",
+      "slug": "vpp",
+      "name": "虚拟电厂",
       "group": "field",
       "tags": [
-        "语音"
+        "虚拟电厂"
       ],
-      "definition": "AI 语音与音频：语音合成、实时语音对话、音乐生成与音频理解的模型与产品。"
+      "definition": "把分布式光伏、储能、充电桩和可调负荷聚合成一个电厂：虚拟电厂平台、聚合商与需求响应。"
     },
     {
-      "slug": "embodied",
-      "name": "具身智能",
+      "slug": "microgrid",
+      "name": "智能微电网",
       "group": "field",
       "tags": [
-        "具身智能"
+        "微电网"
       ],
-      "definition": "装进机器人身体里的 AI：人形机器人、具身基础模型，以及在真实环境里动手干活的能力。"
+      "definition": "能独立运行的小型电网：微电网、离网与并网切换、园区和偏远地区的供电方案。"
     },
     {
-      "slug": "on-device",
-      "name": "端侧 AI",
+      "slug": "source-grid-load",
+      "name": "源网荷储",
       "group": "field",
       "tags": [
-        "端侧"
+        "源网荷储"
       ],
-      "definition": "直接跑在手机、电脑等设备上的 AI：小模型、在本机运行模型的工具与端侧芯片。"
+      "definition": "把电源、电网、负荷和储能一起规划：源网荷储一体化项目、绿电直连与园区级能源系统。"
     },
     {
-      "slug": "open-source",
-      "name": "开源生态",
+      "slug": "energy-management",
+      "name": "能源管理",
       "group": "field",
       "tags": [
-        "开源生态",
-        "开源/仓库"
+        "能源管理"
       ],
-      "definition": "开放权重、能下载下来自己部署的模型，开源框架与 GitHub 上爆火的 AI 项目。"
+      "definition": "用软件和数据管好用电：EMS、能源管理平台、能耗监测、AI 调度与节能改造。"
     },
     {
-      "slug": "engineering",
-      "name": "部署工程",
+      "slug": "integrated-energy",
+      "name": "综合能源服务",
       "group": "field",
       "tags": [
-        "部署/工程"
+        "综合能源服务"
       ],
-      "definition": "怎么把模型跑得更快更省钱：推理加速、显存与成本、服务部署与基础设施选型。"
+      "definition": "不只卖设备，而是打包供电、供热、储能和运维：综合能源服务商、合同能源管理与商业模式。"
     },
     {
-      "slug": "data-training",
-      "name": "数据与训练",
+      "slug": "carbon-green",
+      "name": "碳资产与绿证",
       "group": "field",
       "tags": [
-        "数据/训练"
+        "碳资产",
+        "绿证/绿电"
       ],
-      "definition": "大模型是怎么练出来的：数据集构建、合成数据、预训练与后训练方法、算力与训练成本。"
+      "definition": "碳市场和绿色权益：CCER、碳配额、绿证核发与交易、绿电交易和企业碳管理。"
     },
     {
-      "slug": "safety",
-      "name": "安全对齐",
+      "slug": "zero-carbon-park",
+      "name": "零碳园区",
       "group": "field",
       "tags": [
-        "安全/对齐"
+        "零碳园区"
       ],
-      "definition": "让 AI 可控、可信、不被滥用：越狱与防御、模型行为研究、安全评测与治理框架。"
+      "definition": "园区级的零碳方案：零碳园区试点、碳排放核算、绿电供应与园区能源平台。"
     },
     {
-      "slug": "mcp",
-      "name": "MCP 与工具调用",
+      "slug": "power-market",
+      "name": "电力市场",
       "group": "field",
       "tags": [
-        "MCP/工具调用"
+        "电力市场"
       ],
-      "definition": "让 AI 连上外部软件和数据：MCP 协议、function calling 工具调用与各类工具集成。"
+      "definition": "电怎么定价、怎么交易：现货市场、辅助服务、容量电价、售电公司与分布式参与市场。"
     },
     {
-      "slug": "model-releases",
-      "name": "模型发布",
+      "slug": "smart-design",
+      "name": "智能设计与选型",
+      "group": "field",
+      "tags": [
+        "智能设计"
+      ],
+      "definition": "用软件把方案算出来：屋顶测绘、排布设计、发电量测算、选型与 AI 辅助设计工具。"
+    },
+    {
+      "slug": "simulation",
+      "name": "系统仿真",
+      "group": "field",
+      "tags": [
+        "系统仿真"
+      ],
+      "definition": "光伏、储能和微电网的系统仿真与数字孪生：PVsyst 类工具、并网仿真、经济性模型。"
+    },
+    {
+      "slug": "local-platform",
+      "name": "地方能源平台",
+      "group": "field",
+      "tags": [
+        "地方能源平台"
+      ],
+      "definition": "省市县级的能源投资与运营平台：地方能源集团、城投能源公司、整县推进与区域项目。"
+    },
+    {
+      "slug": "international",
+      "name": "国际与出海",
+      "group": "field",
+      "tags": [
+        "国际"
+      ],
+      "definition": "海外分布式能源市场：欧美户用与工商业光伏、储能政策、海外渠道与中国企业出海。"
+    },
+    {
+      "slug": "policy-docs",
+      "name": "政策文件",
       "group": "genre",
       "tags": [
-        "模型发布"
+        "政策/标准"
       ],
-      "definition": "各家新模型的发布、开源与迭代：旗舰更新、开源权重放出、能力与价格变化。"
+      "definition": "国家和地方的政策原文、征求意见稿、标准与电价规则——分布式能源最需要先看的一类。"
     },
     {
-      "slug": "product-updates",
-      "name": "产品更新",
+      "slug": "projects",
+      "name": "项目与中标",
       "group": "genre",
       "tags": [
-        "产品更新"
+        "项目/交易"
       ],
-      "definition": "AI 产品与应用的功能上新、改版与商业化——谁家的产品变强了、变贵了、能用了。"
+      "definition": "具体项目的招标、中标、并网与投运，以及绿电绿证和碳市场的成交。"
     },
     {
-      "slug": "papers",
-      "name": "论文研究",
+      "slug": "company-events",
+      "name": "公司动态",
       "group": "genre",
       "tags": [
-        "论文/研究"
+        "公司/资本"
       ],
-      "definition": "值得读的 AI 论文与研究成果：架构创新、训练方法、能力测量与理论进展。"
+      "definition": "公司的经营、财报、融资并购、人事与合作：谁在扩张、谁在收缩。"
     },
     {
-      "slug": "benchmarks",
-      "name": "评测基准",
+      "slug": "product-solutions",
+      "name": "产品与方案",
       "group": "genre",
       "tags": [
-        "评测/基准"
+        "产品/方案"
       ],
-      "definition": "模型到底谁更强：Benchmark 评测成绩、评测方法的争议与排行榜变化。"
+      "definition": "组件、逆变器、储能、充电桩与能源平台的新品、新版本和整体方案。"
     },
     {
-      "slug": "tutorials",
-      "name": "教程实践",
+      "slug": "market-data",
+      "name": "市场行情",
       "group": "genre",
       "tags": [
-        "教程/实践"
+        "市场/数据"
       ],
-      "definition": "拿来就能用的实操内容：提示词技巧、工作流搭建、工具用法与踩坑经验。"
+      "definition": "价格、装机、出货量与利用率：光伏和储能的市场数据与行情变化。"
+    },
+    {
+      "slug": "research-reports",
+      "name": "研究报告",
+      "group": "genre",
+      "tags": [
+        "研究/报告"
+      ],
+      "definition": "协会、智库与咨询公司的报告和白皮书：市场预测、技术路线与政策研究。"
+    },
+    {
+      "slug": "design-practice",
+      "name": "设计与实践",
+      "group": "genre",
+      "tags": [
+        "设计/实践"
+      ],
+      "definition": "能照着做的实操：系统设计、选型测算、施工运维、渠道做法与商业模式复盘。"
     },
     {
       "slug": "opinions",
-      "name": "大佬观点",
+      "name": "观点与判断",
       "group": "genre",
       "tags": [
-        "大佬观点"
+        "观点/判断"
       ],
-      "definition": "行业关键人物在想什么：创始人访谈、研究者论战与投资人判断。"
+      "definition": "行业人物的判断、访谈与评论：分布式能源接下来往哪走。"
     },
     {
-      "slug": "trends",
-      "name": "现象与趋势",
+      "slug": "safety",
+      "name": "安全与事故",
       "group": "genre",
       "tags": [
-        "现象/趋势"
+        "安全/事故"
       ],
-      "definition": "AI 正在改变什么：大家怎么用 AI、新能力的出现、对社会与市场格局的影响。"
-    },
-    {
-      "slug": "industry",
-      "name": "行业动态",
-      "group": "genre",
-      "tags": [
-        "行业动态"
-      ],
-      "definition": "AI 圈的商业大事：融资并购、人事变动、合作与竞争、政策与市场变化。"
-    },
-    {
-      "slug": "policy",
-      "name": "政策监管",
-      "group": "genre",
-      "tags": [
-        "政策/监管"
-      ],
-      "definition": "AI 相关的政策法规与政府监管：立法进展、出口管制与全球治理。"
+      "definition": "电站与储能的安全事故、起火调查、召回与并网安全检查。"
     }
   ]
 }

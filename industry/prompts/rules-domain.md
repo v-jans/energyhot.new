@@ -1,45 +1,49 @@
 
-【AI 领域翻译规则 — 本平台 100% 是 AI/ML/LLM 行业内容，严格遵守】
+【数字综合能源领域翻译规则 — 本平台 100% 是分布式能源、储能、充电与电力市场行业内容，严格遵守】
 
-1. 歧义默认值：以下词在中文有非 AI 歧义，**一律按 AI 含义翻译**：
-   - LLM = 大语言模型（绝不译"法学硕士"/"Master of Laws"）
-   - Token / tokens = 模型 token（保留英文；绝不译"代币"/"令牌"）
-   - Transformer = Transformer 架构（保留英文；不译"变压器"）
-   - Diffusion = 扩散模型（AI 生成，不是物理扩散）
-   - Agent / Agentic = AI 智能体 / 智能体的（不译"代理人"/"中介"）
-   - Alignment = 对齐（AI 安全语境）
-   - Inference = 推理（模型生成）
-   - Reasoning = 推理（注意：与 inference 都译"推理"，必要时用"链式推理"区分 CoT；reasoning model 指 o1/o3/R1 这类思考型模型）
-   - Embedding = 嵌入向量（也可保留英文）
-   - Distillation = 知识蒸馏
-   - Hallucination = 模型幻觉
-   - Fine-tune / Fine-tuning = 微调
-   - Pretrain / Pretraining = 预训练
-   - Context window = 上下文窗口
-   - Prompt = 提示词
-   - Skill / Skills = 技能（Claude 等 Agent 框架的能力包，不译"特长"）
+1. 歧义默认值：以下词在中文有非能源歧义，**一律按能源行业含义翻译**：
+   - Distributed = 分布式（电力/光伏语境，不译"分销"/"分发"）
+   - Inverter = 逆变器（不译"反相器"）
+   - Storage = 储能（电池/系统语境，不译"存储"）
+   - VPP / Virtual Power Plant = 虚拟电厂（不译"虚拟发电厂"）
+   - Microgrid = 微电网（不译"微型网络"）
+   - Source-grid-load-storage = 源网荷储
+   - Green certificate = 绿证；Green power = 绿电
+   - Carbon asset / allowance = 碳资产 / 碳配额
+   - Spot market = 电力现货市场（不是商品现货）
+   - Ancillary services = 辅助服务
+   - Capacity price = 容量电价
+   - Feed-in tariff = 上网电价
+   - Consumption / curtailment = 消纳 / 弃光弃风
+   - Grid connection = 并网
+   - Demand charge = 需量电费
+   - Peak-valley spread = 峰谷价差
+   - Residential PV = 户用光伏；C&I PV = 工商业光伏
+   - EPC = 工程总承包（可保留 EPC）
+   - O&M = 运维
+   - PPA = 购电协议（可保留 PPA）
+   - BIPV = 光伏建筑一体化（可保留 BIPV）
+   - PV + storage + charging = 光储充
 
-2. 以下专有名词**一律保留英文原文**，不翻译不加中文括注：
-   - AI 公司：OpenAI / Anthropic / Google DeepMind / xAI / Meta AI / Mistral / DeepSeek / Cohere / HuggingFace（HF）/ Runway / ElevenLabs / Suno / Pika / Midjourney / Perplexity
-   - 模型族（举例 + 通用规则）：GPT / Claude / Gemini / Llama / Qwen / Grok / o 系列 / DeepSeek / Mistral / Mixtral / Phi / Sora / Veo / Imagen
-     **规则**：任何大模型族名、产品代号一律保留英文
-   - 模型版本号（举例 + 通用规则）：GPT-5 / Claude 4.7 / Claude Sonnet 4.6 / Llama 4 / Gemini 3 / o3 / o4 / DeepSeek-V4 / Qwen3.7
-     **规则**：版本号一字不改（包括字母数字后缀如 4o / 4.7 / 405B / V4 / R1），绝不"翻译性扩写"（不要把 "405B" 译成 "4050 亿"，不要把 "V4" 译成 "第 4 代"）
-   - 技术缩写（举例 + 通用规则）：LLM / RAG / RLHF / DPO / LoRA / QLoRA / PEFT / MoE / CoT / ReAct / KV cache / SOTA / AGI / MCP / ADK / NPU / GPU / TPU
-     **规则**：任何 2-5 字母的全大写缩写，默认按 AI/ML 含义保留英文
-   - 评测基准（举例 + 通用规则）：MMLU / GPQA / HumanEval / SWE-bench / SWE-bench Verified / AIME / HLE / ARC-AGI / ARC-AGI 2 / MT-Bench / Chatbot Arena / Aider Polyglot / LiveCodeBench
-     **规则**：以 -bench / -eval 结尾或全大写的评测名一律保留英文
-   - AI 工具/产品：Cursor / Copilot / Codex / Aider / Devin / Cline / Claude Code / Windsurf / Zed / v0 / Bolt / Lovable / Replit Agent
-   - Agent 框架：LangChain / LangGraph / LlamaIndex / CrewAI / AutoGen / Pydantic AI / Vercel AI SDK / DSPy
-   - 推理/部署：Ollama / vLLM / SGLang / TensorRT / Triton / CUDA / ROCm
-   - 通用技术：API / SDK / CLI / IDE / SaaS / CDN / SSO / OAuth / JWT / WebSocket / SSE / gRPC
+2. 以下专有名词**一律保留原文**，不翻译不加中文括注：
+   - 公司：天合富家 / 天合光能（Trina Solar）/ 华为数字能源 / 阳光电源（Sungrow）/ 宁德时代（CATL）/ 特来电（TELD）/ 远景（Envision）/ 正泰安能 / 国家电网 / 南方电网 / 隆基（LONGi）/ 晶科（JinkoSolar）/ 晶澳（JA Solar）/ 固德威（GoodWe）/ 锦浪（Solis）/ 协鑫（GCL）/ 中国能建 / 中国电建
+     **规则**：中国公司用官方中文名，海外公司用官方英文名；同一篇里只选一种写法
+   - 产品与方案名：至尊 / Vertex / PowerTitan / PowerStack / 天合富家原装 / 富家瓦 / 天能瓦 / 天工智云 / 阳光家庭光伏 / 骐骥换电 / FusionSolar / 智能组串式 / 液冷超充
+     **规则**：产品名、系列名和型号一字不改，不按字面意译
+   - 政策文号与标准号：国能发新能规〔2025〕7号 / 发改环资〔2025〕910号 / GB/T 47241—2026
+     **规则**：文号、标准号、年份和标点照原文，不改写、不省略
+   - 技术缩写：VPP / EMS / BIPV / EPC / PPA / CCER / LCOE / IRR / SOC / PCS / MPPT / TOPCon / HJT / BC / N 型 / 314Ah / 20 尺
+     **规则**：行业通用的 2–6 字母缩写保留英文；中文里已通用的（储能、逆变器）用中文
+   - 市场与平台：上海环交所 / 北京电力交易中心 / 中国绿证平台 / 广州电力交易中心
+   - 通用词：API / SDK / SaaS / URL / APP / AI / 数据中心
 
-3. 中国厂商**优先用官方中文品牌名**（首次出现可双标"千问（Qwen3）"，后续选一种保持一致）：
-   - 千问（Qwen）/ 文心一言 / 智谱（GLM）/ 月之暗面（Kimi）/ 深度求索（DeepSeek）/ 阶跃星辰（Step）/ 零一万物（Yi）/ 百川 / 豆包（字节）/ 混元（腾讯）/ 可灵（Kling，快手）/ 即梦（Jimeng，字节）/ MiniMax（不译）/ 美团 LongCat / 昆仑万维 Skywork / 面壁 MiniCPM / 华为昇腾 / 寒武纪
+3. 中国厂商与地方平台**优先用官方中文名**（首次出现可双标"天合光能（Trina Solar）"，后续选一种保持一致）：
+   - 天合富家 / 天合光能 / 华为数字能源 / 阳光电源 / 宁德时代 / 特来电 / 远景 / 正泰安能 / 隆基绿能 / 晶科能源 / 晶澳科技 / 固德威 / 锦浪科技 / 协鑫能科 / 中国能建 / 中国电建 / 国家电投 / 中国华能 / 中国大唐 / 中国华电 / 国家能源集团
+   - 地方平台：山东能源集团 / 浙江能源 / 江苏国信 / 广东能源集团 / 申能集团 / 京能集团 / 皖能集团
+   - 机构：国家能源局 / 国家发展改革委 / 生态环境部 / 中电联 / 中国光伏行业协会 / 中关村储能产业技术联盟 / 中国充电联盟 / InfoLink Consulting
 
-4. 代码 / 命令 / URL / 数字单位 **一字不改**保留：
-   - 反引号代码 `code` 不翻译
-   - 命令如 /code-review、pip install、npm run 不译（不要译"代码审查"）
-   - URL 原样
-   - 数字+单位：8k context / 175B params / 3.5x speedup / $3 per M tokens / 99.9%
-   - 金额、参数量、比例、区间必须保留原文的阿拉伯数字和单位；不要把 $10B-$100B 改写成“数百亿至数千亿美元”等中文数量词
+4. 数字与单位 **一字不改**保留：
+   - 装机与容量：100MW / 200MWh / 10GW / 314Ah / 20 尺集装箱 / 25 年
+   - 价格与收益：0.35 元/kWh / 1.2 元/W / 3.5% / IRR 8% / ¥0.28/kWh
+   - 金额、比例、区间必须保留原文的阿拉伯数字和单位；不要把“3 亿元”改写成“数亿元”，也不要把“100MW/200MWh”改写成“大型储能项目”
+   - URL、文件路径、代码和命令原样保留

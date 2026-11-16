@@ -81,7 +81,7 @@ test("a tag that is a topic's own leads to the topic page, and not beside that t
   assert.deepEqual(hrefs("#Agent"), []);
   assert.deepEqual(hrefs("#OpenAI"), ["/topics/openai", "/topics/openai"]);
   assert.deepEqual(hrefs("#框架"), [`/all?tag=${encodeURIComponent("框架")}`, `/all?tag=${encodeURIComponent("框架")}`]);
-  assert.equal($("a[href^='/all?tag=Agent']").length, 0);
+  assert.equal($("a[href^='/all?tag=虚拟电厂']").length, 0);
 });
 
 test("an event page says when it was first reported, by the Beijing day and its year when not this one", async () => {
