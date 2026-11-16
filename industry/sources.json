@@ -295,6 +295,155 @@
       "syndicate_fulltext": false
     },
     {
+      "id": "miit-zcwj",
+      "name": "工业和信息化部 · 文件发布",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.miit.gov.cn/search-front-server/api/search/info?websiteid=110000000000000&scope=basic&q=&pg=15&cateid=58&pos=title&dateField=deploytime&selectFields=title,url,cdate&group=distinct&level=6&sortFields=rel_time%3Adesc&p=1",
+        "itemsPath": "data.searchResult.dataResults",
+        "titlePaths": [
+          "groupData.0.data.title"
+        ],
+        "publishedAtPath": "groupData.0.data.jsearch_date",
+        "urlTemplate": "https://www.miit.gov.cn{raw:groupData.0.data.url}",
+        "_aihot": {
+          "initialBackfillLimit": 12
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "官方",
+        "政策",
+        "国家"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "jl-nyj-tzgg",
+      "name": "吉林省能源局 · 通知公告",
+      "kind": "web_list",
+      "config": {
+        "url": "https://nyj.jl.gov.cn/zwgk/tzgg/",
+        "itemSelector": "li.normal_li",
+        "linkSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://nyj.jl.gov.cn/zwgk/"
+        ],
+        "detail": {
+          "maxFetches": 10,
+          "publishedAtRegex": "(20\\d{2}-\\d{2}-\\d{2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "官方",
+        "地方",
+        "政策"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "yuhuan-tzgg",
+      "name": "玉环市人民政府 · 通知公告",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.yuhuan.gov.cn",
+        "itemSelector": "div.tzgg p",
+        "linkSelector": "a",
+        "publishedAtSelector": "span",
+        "allowUrlPrefixes": [
+          "https://www.yuhuan.gov.cn/col/col1229299687/art/"
+        ],
+        "detail": {
+          "maxFetches": 8,
+          "publishedAtRegex": "(20\\d{2}-\\d{2}-\\d{2})"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "官方",
+        "地方",
+        "政策"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "sh-zjw-gfxwj",
+      "name": "上海市住房城乡建设管理委 · 规范性文件",
+      "kind": "web_list",
+      "config": {
+        "url": "https://zjw.sh.gov.cn/gfxwj/index.html",
+        "itemSelector": "li",
+        "linkSelector": "a",
+        "publishedAtSelector": "span.time",
+        "allowUrlPrefixes": [
+          "https://zjw.sh.gov.cn/gfxwj/"
+        ],
+        "detail": {
+          "maxFetches": 10,
+          "titleRegex": "Article-title\"[^>]*>\\s*([^<]+?)\\s*<",
+          "titleAuthoritative": true
+        },
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "官方",
+        "地方",
+        "政策"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "solarbe-news",
+      "name": "索比光伏网",
+      "kind": "web_list",
+      "config": {
+        "url": "https://news.solarbe.com/",
+        "itemSelector": "div.home-step-list-r",
+        "linkSelector": "a",
+        "titleSelector": "div.home-step-list-r-title",
+        "publishedAtSelector": "div.home-step-list-r-time",
+        "allowUrlPrefixes": [
+          "https://news.solarbe.com/"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "光伏",
+        "市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
       "id": "gd-energy-policy",
       "name": "广东省能源局 · 通知公告",
       "kind": "web_list",
