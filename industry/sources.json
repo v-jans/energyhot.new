@@ -89,13 +89,13 @@
       "name": "国家发展改革委 · 政策发布",
       "kind": "web_list",
       "config": {
-        "url": "https://www.ndrc.gov.cn/xxgk/zcfb/",
+        "url": "https://www.ndrc.gov.cn/xxgk/zcfb/fzggwl/",
         "itemSelector": "div.list ul.u-list > li",
         "linkSelector": "a",
         "titleSelector": "a",
         "publishedAtSelector": "span",
         "allowUrlPrefixes": [
-          "https://www.ndrc.gov.cn/xxgk/zcfb/"
+          "https://www.ndrc.gov.cn/xxgk/zcfb/fzggwl/"
         ],
         "_aihot": {
           "initialBackfillLimit": 10
