@@ -1,0 +1,20 @@
+# n8n 部署示例（自动化工作流：每日摘要、关键词提醒、周报流水线）
+# 官方文档：https://docs.n8n.io/hosting/installation/docker/
+#
+# 用法：把这个文件放到服务器一个独立目录（如 /www/wwwroot/n8n），
+#       修改 N8N_ENCRYPTION_KEY 后执行：docker compose up -d
+# 小内存提醒：n8n 建议单独 2G 内存可用；和 AIHOT 同机部署请确认总内存够用。
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"              # 防火墙放行 5678，或只走反代不开公网
+    environment:
+      - TZ=Asia/Shanghai
+      - GENERIC_TIMEZONE=Asia/Shanghai      # 定时触发器用这个时区
+      - N8N_ENCRYPTION_KEY=请改成随机长字符串  # ★凭据加密密钥（openssl rand -hex 24）
+        # 丢失或更换后，已保存的凭据将无法解密，务必先记下再改
+    volumes:
+      - ./data:/home/node/.n8n   # 工作流与凭据都在 ./data，备份这个目录

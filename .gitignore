@@ -14,3 +14,7 @@ apps/web/.react-router/
 # Font package unpacked to regenerate the report nameplates (docs/customize.md)
 package/
 fontsource-noto-sans-sc-*.tgz
+
+# Local database dumps and tool state
+local-data.sql.gz
+.workbuddy/

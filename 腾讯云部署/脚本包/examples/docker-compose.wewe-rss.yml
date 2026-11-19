@@ -1,0 +1,22 @@
+# wewe-rss 部署示例（公众号文章 → RSS，用于「公众号资讯自动获取」线）
+# 镜像与变量以官方文档为准：https://github.com/cooderh/wewe-rss
+#
+# 安全红线（务必遵守）：
+#   1. 只部署在自己完全控制的服务器上，绝不使用来路不明的公共实例（有盗号案例）；
+#   2. 只用专用的微信读书小号登录授权，不要用主力微信账号；
+#   3. AUTH_CODE 必须改成强口令，防火墙只放行给需要的人，避免接口被陌生人调用。
+#
+# 用法：把这个文件放到服务器一个独立目录（如 /www/wwwroot/wewe-rss），
+#       修改 AUTH_CODE 后执行：docker compose up -d
+services:
+  wewe-rss:
+    image: cooderh/wewe-rss:latest
+    container_name: wewe-rss
+    restart: always
+    ports:
+      - "4001:4000"              # 主机 4001 → 容器 4000；防火墙放行 4001
+    environment:
+      - AUTH_CODE=ChangeMe_2026  # ★改成你自己的强口令，登录和接口调用都要用
+      - DATABASE_URL=file:../data/wewe-rss.db
+    volumes:
+      - ./data:/app/data         # 数据库文件落在 ./data，备份这个目录即可
