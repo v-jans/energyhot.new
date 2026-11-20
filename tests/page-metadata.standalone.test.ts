@@ -28,7 +28,7 @@ import { dateLine } from "../apps/web/app/features/report/format.ts";
 import { startWebServer, type WebServer } from "../apps/web/tests/web-server.ts";
 
 const at = "2026-10-04T08:00:00.000Z";
-const item: FeedItemSummary = { id: "metadata-fixture", title: "可核实的测试报道", summary: "报道摘要", reason: null, source: { name: "Fixture" }, publishedAt: at, timelineAt: at, category: "ai-models", tags: [], score: 80, selected: true, channel: "news", x: null };
+const item: FeedItemSummary = { id: "metadata-fixture", title: "可核实的测试报道", summary: "报道摘要", reason: null, source: { name: "Fixture" }, publishedAt: at, timelineAt: at, category: "product", tags: [], score: 80, selected: true, channel: "news", x: null };
 const detail: SiteItemDetail = { ...item, x: null, originalTitle: null, links: { original: "https://example.org/report" }, discoveredAt: at, story: null, readingMode: "full", author: null, body: { zh: "<p>可核实的测试正文。</p>", original: null, zhKind: "original", complete: true }, outline: [], relatedStories: [], topics: [], tagTopics: {}, daily: null, indexable: true, googleNoindex: false, markdownAvailable: true, group: null, hasTranslation: false, bodyLanguage: "zh", mentions: [] };
 /** Article pages by id: the fixture, one kept from Google only, one kept from every engine. */
 const details: Record<string, SiteItemDetail> = {
@@ -54,7 +54,7 @@ const sameSourceStory: StoryDetail = { ...story, publicId: "metadata-story-same-
 /** The same event once a second distinct source joined it. */
 const severalReports: StoryDetail = { ...story, publicId: "metadata-story-several", reportCount: 2, sourceCount: 2 };
 const topicPage = (pageNum: number): TopicPage => ({
-  topic: { slug: "openai", name: "OpenAI", group: "company", groupName: "公司", definition: "OpenAI 最新动态。", brand: null, total: 45, poolTotal: 60, recent: 5, latest: { title: item.title, at }, indexable: true },
+  topic: { slug: "tianhe-fujia", name: "天合富家", group: "company", groupName: "公司", definition: "天合富家的最新动态。", brand: null, total: 45, poolTotal: 60, recent: 5, latest: { title: item.title, at }, indexable: true },
   modules: {},
   items: [item],
   tagTopics: {},
@@ -73,7 +73,7 @@ const api = createServer((req, res) => {
   if (path === "/api/site/hot") return send({ computedAt: at, windowHours: 48, entries: [] });
   if (path === "/api/site/timeline") return send({ filters: readFilters(url.searchParams), cards: [{ key: item.id, anchorAt: at, item, group: null }], nextCursor: null, hot: null, dayCounts: { "2026-10-04": 1 } });
   if (path === "/api/site/pool") return send({ filters: { ...readFilters(url.searchParams), q: url.searchParams.get("q"), tab: url.searchParams.get("tab") ?? "time" }, items: [item], page: Number(url.searchParams.get("page") ?? 1), pageCount: 3, total: 100, todayCount: 1, freshness: at });
-  if (path === "/api/site/topics/openai") return send(topicPage(Number(url.searchParams.get("page") ?? 1)));
+  if (path === "/api/site/topics/tianhe-fujia") return send(topicPage(Number(url.searchParams.get("page") ?? 1)));
   const article = /^\/api\/site\/items\/([^/]+?)(?:\/original)?$/.exec(path)?.[1];
   if (article && details[article]) return send(details[article]);
   if (path === `/api/site/stories/${story.publicId}`) return send(story);
@@ -106,15 +106,15 @@ function structured($: cheerio.CheerioAPI): Array<Record<string, unknown>> {
 }
 
 test("filtered feeds keep their exact content address but leave indexing to the public landing pages", async () => {
-  for (const base of ["/", "/all"]) for (const query of ["channel=news", "category=ai-models", "tag=Agent", "channel=x&category=paper&tag=Agent"]) {
+  for (const base of ["/", "/all"]) for (const query of ["channel=news", "category=product", "tag=虚拟电厂", "channel=x&category=research&tag=虚拟电厂"]) {
     const $ = await page(`${base}?${query}&utm_source=fixture&anchorAt=old&deep=1`);
     assert.equal($("meta[name=robots]").attr("content"), "noindex, follow", `${base}?${query}`);
-    assert.equal($("link[rel=canonical]").attr("href"), `${web.origin}${base}?${query}`);
+    assert.equal($("link[rel=canonical]").attr("href"), new URL(`${base}?${query}`, web.origin).href);
     assert.ok($("main").text().includes(item.title));
   }
-  const $ = await page("/all?q=Claude&tab=relevance&page=2&anchorAt=old");
+  const $ = await page("/all?q=天合富家&tab=relevance&page=2&anchorAt=old");
   assert.equal($("meta[name=robots]").attr("content"), "noindex, follow");
-  assert.equal($("link[rel=canonical]").attr("href"), `${web.origin}/all?q=Claude&tab=relevance&page=2`);
+  assert.equal($("link[rel=canonical]").attr("href"), new URL("/all?q=天合富家&tab=relevance&page=2", web.origin).href);
 });
 
 test("ordinary feed pages remain indexable and normalize ignored parameters", async () => {
@@ -134,12 +134,12 @@ test("全部动态's later pages leave search to its first page and keep their l
 });
 
 test("topic archive pages leave search to the topic's first page while keeping their links followed", async () => {
-  const first = await page("/topics/openai");
+  const first = await page("/topics/tianhe-fujia");
   assert.equal(first("meta[name=robots]").attr("content"), "max-image-preview:large");
-  assert.equal(first("link[rel=canonical]").attr("href"), `${web.origin}/topics/openai`);
-  const second = await page("/topics/openai/page/2");
+  assert.equal(first("link[rel=canonical]").attr("href"), `${web.origin}/topics/tianhe-fujia`);
+  const second = await page("/topics/tianhe-fujia/page/2");
   assert.equal(second("meta[name=robots]").attr("content"), "noindex, follow");
-  assert.equal(second("link[rel=canonical]").attr("href"), `${web.origin}/topics/openai/page/2`);
+  assert.equal(second("link[rel=canonical]").attr("href"), `${web.origin}/topics/tianhe-fujia/page/2`);
   assert.ok(second("main").text().includes(item.title), "the archive page still renders its reports");
 });
 

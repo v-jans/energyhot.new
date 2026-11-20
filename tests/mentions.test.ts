@@ -18,7 +18,7 @@ import { stopBoss } from "@aihot/backend/jobs/queue";
 const T = tag();
 const source = `mentions-${T}`;
 const at = new Date("2026-09-30T00:00:00Z");
-const models = [{ name: "models", mentions: async () => [{ href: "/models/dots-2", names: ["Dots 2"] }] }];
+const models = [{ name: "models", mentions: async () => [{ href: "/models/fujiawa-2", names: ["富家瓦 2"] }] }];
 let sequence = 0;
 
 before(async () => {
@@ -40,43 +40,43 @@ async function article(title: string, summary: string) {
 const hrefs = (mentions: Array<{ href: string | null }>) => mentions.map((m) => m.href);
 
 test("an article page is sent the pages its summary names: the module's and the engine's company topics", async () => {
-  const id = await article("Dots 2 发布", "OpenAI 发布 Dots 2，接入了已有的应用。");
+  const id = await article("富家瓦 2 发布", "天合富家发布富家瓦 2，接入了已有的应用。");
   installModules([]);
   const bare = await loadItemDetail(id);
   assert.equal(bare.kind, "found");
   if (bare.kind !== "found") return;
-  assert.deepEqual(hrefs(bare.item.mentions), ["/topics/openai"], "a site without modules links its companies only");
+  assert.deepEqual(hrefs(bare.item.mentions), ["/topics/tianhe-fujia"], "a site without modules links its companies only");
 
   installModules(models);
   const full = await loadItemDetail(id);
   if (full.kind !== "found") return assert.fail("article missing");
   assert.deepEqual(full.item.mentions, [
-    { href: "/topics/openai", names: ["OpenAI"] },
-    { href: "/models/dots-2", names: ["Dots 2"] },
+    { href: "/topics/tianhe-fujia", names: ["天合富家"] },
+    { href: "/models/fujiawa-2", names: ["富家瓦 2"] },
   ]);
 });
 
 test("an event page is sent the pages its overview names", async () => {
   installModules(models);
-  const id = await article("谷歌发布 Dots 2 对手", "谷歌发布 Dots 2 的对手。");
-  const [s] = await sql<{ id: number }[]>`INSERT INTO stories (public_id, title, first_report_at, latest_at) VALUES (${randomUUID()}, '谷歌发布新模型', ${at}, ${at}) RETURNING id`;
-  const [f] = await sql<{ id: number }[]>`INSERT INTO facts (public_id, story_id, title, subject, action, object) VALUES (${`f-${randomUUID()}`}, ${s!.id}, '谷歌发布新模型', '谷歌', '发布', '新模型') RETURNING id`;
+  const id = await article("阳光电源发布富家瓦 2 对手", "阳光电源发布富家瓦 2 的对手。");
+  const [s] = await sql<{ id: number }[]>`INSERT INTO stories (public_id, title, first_report_at, latest_at) VALUES (${randomUUID()}, '阳光电源发布新方案', ${at}, ${at}) RETURNING id`;
+  const [f] = await sql<{ id: number }[]>`INSERT INTO facts (public_id, story_id, title, subject, action, object) VALUES (${`f-${randomUUID()}`}, ${s!.id}, '阳光电源发布新方案', '阳光电源', '发布', '新方案') RETURNING id`;
   await sql`INSERT INTO fact_articles (fact_id, article_id, role, evidence) VALUES (${f!.id}, ${id}, 'report', 'fixture')`;
   await sql`UPDATE publications SET story_id = ${s!.id}, fact_id = ${f!.id} WHERE article_id = ${id}`;
   const story = (await loadStoryDetail(Number(s!.id), new Date(+at + 3600_000)))!;
-  assert.equal(story.excerpt?.text, "谷歌发布 Dots 2 的对手。");
-  assert.deepEqual(hrefs(story.mentions), ["/topics/google", "/models/dots-2"]);
+  assert.equal(story.excerpt?.text, "阳光电源发布富家瓦 2 的对手。");
+  assert.deepEqual(hrefs(story.mentions), ["/topics/sungrow", "/models/fujiawa-2"]);
 });
 
 test("a report is sent the pages its lead and summaries name", async () => {
   installModules(models);
-  const id = await article("Dots 2 发布", "Dots 2 上线。");
+  const id = await article("富家瓦 2 发布", "富家瓦 2 上线。");
   const key = "2096-02-01";
   await sql`INSERT INTO reports (kind, key, window_start, window_end, content, generated_at)
     VALUES ('daily', ${key}, ${at}, ${at}, ${sql.json({
-      lead: { title: "英伟达发布新卡", leadParagraph: "英伟达发布新卡。" },
-      sections: [{ label: "模型", items: [{ itemId: id, title: "Dots 2 发布", summary: "Dots 2 上线。", sourceUrl: "https://example.com", sourceName: "Mention source" }] }],
+      lead: { title: "宁德时代发布新储能系统", leadParagraph: "宁德时代发布新储能系统。" },
+      sections: [{ label: "产品", items: [{ itemId: id, title: "富家瓦 2 发布", summary: "富家瓦 2 上线。", sourceUrl: "https://example.com", sourceName: "Mention source" }] }],
     } as never)}, ${at})`;
   const report = (await loadReport("daily", key))!;
-  assert.deepEqual(hrefs(report.mentions), ["/topics/nvidia", "/models/dots-2"]);
+  assert.deepEqual(hrefs(report.mentions), ["/topics/catl", "/models/fujiawa-2"]);
 });
