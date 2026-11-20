@@ -74,7 +74,7 @@ async function report(suffix: string, title = FACT_TITLE, summary = "摘要", pu
     sourceId: SOURCE, url: `https://example.com/events-${T}-${suffix}`, title: `Model launch ${T} ${suffix}`, bodyText: "A new model.", bodyStatus: "ok", via: "fetch", publishedAt,
   });
   await sql`INSERT INTO analyses (article_id, input_revision, origin, relevance, category, title_zh, summary_zh, score, selected, output)
-            VALUES (${articleId}, 1, 'rule', 'pass', 'product', ${title}, ${summary}, 80, false, ${sql.json({ fact: { title, subject: "测试", action: "发布", object: "模型" } })})`;
+            VALUES (${articleId}, 1, 'rule', 'pass', 'ai-models', ${title}, ${summary}, 80, false, ${sql.json({ fact: { title, subject: "测试", action: "发布", object: "模型" } })})`;
   await publishArticle(articleId);
   return articleId;
 }
@@ -528,7 +528,7 @@ test("ROUNDUP answers describe a pair, not the single query's identity; grounded
     const [fact] = await sql`SELECT conditions FROM facts WHERE id = ${result.factId!}`;
     assert.equal(fact!.conditions, "仅预览用户");
     const [membership] = await sql`SELECT role, evidence FROM fact_articles WHERE article_id = ${id}`;
-    assert.equal(membership!.role, "primary", "T1 comes from tier even when old source.first_party is false");
+    assert.equal(membership!.role, "primary", "T1 comes from tier");
     assert.equal(membership!.evidence, "A new model.\nPreview users only.");
   } finally { relation = "SAME_OCCURRENCE"; }
 });

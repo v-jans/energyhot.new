@@ -78,7 +78,7 @@ async function report(text: string, scope = "single", selected = true, from = so
   const { articleId } = await upsertMaterial({ sourceId: from, url: `https://example.org/value/${randomUUID()}`, title: text,
     bodyText: text, bodyStatus: "ok", via: "fetch", publishedAt });
   await sql`INSERT INTO analyses(article_id,input_revision,origin,relevance,title_zh,summary_zh,category,score,selected,output)
-    VALUES(${articleId},1,'rule','pass',${text},${text},'project',80,${selected},${sql.json({ scope, fact: scope === "composite" ? null : { title: text, subject: text, action: "发布", object: text } })})`;
+    VALUES(${articleId},1,'rule','pass',${text},${text},'ai-products',80,${selected},${sql.json({ scope, fact: scope === "composite" ? null : { title: text, subject: text, action: "发布", object: text } })})`;
   await publishArticle(articleId);
   return articleId;
 }
@@ -180,7 +180,7 @@ test("a material revision rechecks value in the same batch while keeping its con
     await upsertMaterial({ sourceId, url: article!.url, title: revised, bodyText: revised,
       bodyStatus: "ok", via: "fetch", publishedAt: article!.published_at });
     await sql`INSERT INTO analyses(article_id,input_revision,origin,relevance,title_zh,summary_zh,category,score,selected,output)
-      VALUES(${id},${revision},'rule','pass',${revised},${revised},'project',80,true,
+      VALUES(${id},${revision},'rule','pass',${revised},${revised},'ai-products',80,true,
         ${sql.json({ scope: "single", fact: { title: revised, subject: text, action: "介绍", object: text } })})`;
     assert.deepEqual([(await state(id)).grouping_status,(await state(id)).selected], ["pending",false]);
     selection = { addsValue, reason: addsValue ? "补充了新测量结果" : "仅措辞变化" };
@@ -562,6 +562,31 @@ test("the owner's post on the same news gives way to their article, whichever ca
   }
 });
 
+test("the owner's post and article grouped into one fact keep one card even when the card comparison misses", async () => {
+  sameNewsAhead();
+  const text = family();
+  const article = await card(text, "single", ownArticles);
+  relation = "SAME_OCCURRENCE";
+  otherNews("SAME_STORY");
+  const post = await report(text + "帖子", "single", true, ownPosts);
+  assert.equal((await groupArticle(post)).factId, article.factId, "fixture: the post joins the article's fact");
+  assert.deepEqual([(await state(post)).selected, (await state(article.id)).selected], [false, true]);
+  assert.equal(await cards([post, article.id]), 1);
+
+  sameNewsAhead();
+  const first = family();
+  otherNews("UNRELATED");
+  const earlier = await report(first, "single", true, ownPosts);
+  const founded = await groupArticle(earlier);
+  await releasedMinuteAgo(earlier);
+  relation = "SAME_OCCURRENCE";
+  otherNews("SAME_STORY");
+  const later = await report(first + "文章", "single", true, ownArticles);
+  const result = await groupArticle(later);
+  assert.equal(result.factId, founded.factId, "fixture: the article joins the post's fact");
+  assert.deepEqual([result.retired, (await state(earlier)).selected, (await state(later)).selected], [[earlier], false, true]);
+});
+
 test("the owner's post gives way even when ordinary reports already hold the fact's card", async () => {
   sameNewsAhead();
   const text = family();
@@ -573,7 +598,7 @@ test("the owner's post gives way even when ordinary reports already hold the fac
   const post = await report(text + "帖子", "single", true, ownPosts);
   pairCalls = 0;
   await groupArticle(post);
-  assert.ok(pairCalls > 0, "the post compares with the article although the fact has a card");
+  assert.equal(pairCalls, 0, "sharing the article's fact settles it, although the fact has a card");
   assert.deepEqual([(await state(post)).selected, (await state(ordinary)).selected, (await state(article.id)).selected], [false, true, true]);
 });
 
@@ -611,7 +636,7 @@ test("a revision that lets the owner's article into selection replaces their pos
   const revised = text + "文章补全";
   await upsertMaterial({ sourceId: ownArticles, url: row!.url, title: revised, bodyText: revised, bodyStatus: "ok", via: "fetch", publishedAt: new Date() });
   await sql`INSERT INTO analyses(article_id,input_revision,origin,relevance,title_zh,summary_zh,category,score,selected,output)
-    VALUES(${article},2,'rule','pass',${revised},${revised},'project',80,true,${sql.json({ scope: "single", fact: { title: revised, subject: text, action: "发布", object: text } })})`;
+    VALUES(${article},2,'rule','pass',${revised},${revised},'ai-products',80,true,${sql.json({ scope: "single", fact: { title: revised, subject: text, action: "发布", object: text } })})`;
   const result = await groupArticle(article);
   assert.deepEqual([result.verdict, result.retired], ["kept", [post]]);
   assert.deepEqual([(await state(article)).selected, (await state(post)).selected], [true, false]);
@@ -648,7 +673,7 @@ test("a revision of a report that stayed out does not bring its card back", asyn
   const revised = text + "帖子改了措辞";
   await upsertMaterial({ sourceId: ownPosts, url: row!.url, title: revised, bodyText: revised, bodyStatus: "ok", via: "fetch", publishedAt: new Date() });
   await sql`INSERT INTO analyses(article_id,input_revision,origin,relevance,title_zh,summary_zh,category,score,selected,output)
-    VALUES(${post},2,'rule','pass',${revised},${revised},'project',80,true,${sql.json({ scope: "single", fact: { title: revised, subject: text, action: "发布", object: text } })})`;
+    VALUES(${post},2,'rule','pass',${revised},${revised},'ai-products',80,true,${sql.json({ scope: "single", fact: { title: revised, subject: text, action: "发布", object: text } })})`;
   assert.equal((await groupArticle(post)).verdict, "kept");
   assert.deepEqual([(await state(post)).selected, (await state(article.id)).selected], [false, true]);
 });

@@ -39,8 +39,8 @@ async function citation(title: string) {
 }
 
 async function issue(kind: ReportKind, key: string, content: Record<string, unknown>) {
-  await sql`INSERT INTO reports (kind, key, window_start, window_end, content, generated_at, origin)
-    VALUES (${kind}, ${key}, ${generatedAt}, ${generatedAt}, ${sql.json(content as never)}, ${generatedAt}, 'manual')`;
+  await sql`INSERT INTO reports (kind, key, window_start, window_end, content, generated_at)
+    VALUES (${kind}, ${key}, ${generatedAt}, ${generatedAt}, ${sql.json(content as never)}, ${generatedAt})`;
 }
 
 async function dailyOutlets(key: string) {
@@ -78,7 +78,7 @@ test('withdrawing a named lead preserves the replacement headline and its own fr
 
 test('a historical written daily lead follows withdrawal of the citation it describes', async (t) => {
   t.mock.timers.enable({ apis: ['Date'], now: Date.now() + 1_200_002 });
-  const removed = await citation('历史产品/方案与能力升级');
+  const removed = await citation('历史模型发布与能力升级');
   const replacement = await citation('新的安全工具发布');
   const key = '2096-01-02';
   await issue('daily', key, { lead: { title: removed.title, leadParagraph: removed.summary }, highlights: [replacement.itemId], sections: [{ label: 'News', items: [removed, replacement] }] });
@@ -130,7 +130,7 @@ test('a daily citation without a frozen summary, and a flash with an earlier fro
 
 test('discovery counts exactly the publicly indexed topics it lists', () => {
   const text = llmsTxt({ hasDailies: false, hasWeekly: false, hasMonthly: false, topics: [{ slug: 'sample', name: 'Example', definition: 'Example topic' }], tools: [],
-    modules: { api: [], pace: [], pages: [], topics: [], access: [], usage: [], guideClients: [], ways: [] } });
+    modules: { api: [], pace: [], pages: [], topics: [], access: [], guideClients: [], ways: [] } });
   assert.match(text, /（1 个主题，下一节逐个列出）/);
 });
 
@@ -262,7 +262,7 @@ test('an article page leads an issue without a named lead item exactly when that
   // Issues composed before leads were named: a written lead matched to its citation by title, highlights
   // without a lead, or neither.
   for (const [key, shape] of [['2097-02-03', 'written'], ['2097-02-04', 'none'], ['2097-02-05', 'highlights']] as const) {
-    const opening = await citation(`${key} 开篇产品/方案`);
+    const opening = await citation(`${key} 开篇模型发布`);
     const described = await citation(`${key} 安全工具正式上线`);
     await issue('daily', key, { lead: shape === 'written' ? { title: described.title, leadParagraph: '旧版导语' } : null,
       ...(shape === 'highlights' ? { highlights: [described.itemId] } : {}), sections: [{ label: 'News', items: [opening, described] }] });
