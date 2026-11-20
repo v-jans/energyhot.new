@@ -95,7 +95,7 @@ export function nameMark(size: number, color: string, dot: string): Node {
   ]);
 }
 
-const ACCENTS = { teal: "#2ce2e8", hot: "#ff7a5f", amber: "#e2b454" } as const;
+const ACCENTS = { teal: "#6f9bff", hot: "#ff7a5f", amber: "#e2b454" } as const;
 
 export function clamp(text: string, max: number) {
   const chars = [...text.replace(/\s+/g, " ").trim()];
@@ -117,11 +117,11 @@ async function tree(card: OgCard): Promise<Node> {
       fontFamily: "Noto Sans SC",
       color: "#e6eded",
       backgroundColor: "#0a1012",
-      backgroundImage: "radial-gradient(circle at 88% 8%, rgba(44,226,232,0.28), rgba(10,16,18,0) 46%), radial-gradient(circle at 0% 100%, rgba(23,107,117,0.35), rgba(10,16,18,0) 50%)",
+      backgroundImage: "radial-gradient(circle at 88% 8%, rgba(111,155,255,0.28), rgba(10,16,18,0) 46%), radial-gradient(circle at 0% 100%, rgba(0,51,255,0.35), rgba(10,16,18,0) 50%)",
     },
     [
       h("div", { display: "flex", alignItems: "center", justifyContent: "space-between" }, [
-        (await brandMark("wordmark-dark.svg", 40)) ?? nameMark(34, "#e6eded", "#2ce2e8"),
+        (await brandMark("wordmark-dark.svg", 40)) ?? nameMark(34, "#e6eded", "#6f9bff"),
         h("div", { display: "flex", fontSize: 24, color: "#82939a" }, SITE_HOST),
       ]),
       h("div", { display: "flex", marginTop: 56, alignItems: "center" }, [
