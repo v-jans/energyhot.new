@@ -18,3 +18,6 @@ fontsource-noto-sans-sc-*.tgz
 # Local database dumps and tool state
 local-data.sql.gz
 .workbuddy/
+
+# Local-only compose overrides (e.g. exposing db:5432 to the host for dev)
+docker-compose.override.yml
