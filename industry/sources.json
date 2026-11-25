@@ -444,6 +444,40 @@
       "syndicate_fulltext": false
     },
     {
+      "id": "solarbe-main",
+      "name": "索比光伏网 · 主站",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.solarbe.com/",
+        "itemSelector": "a[href^='https://news.solarbe.com/2']",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "allowUrlPrefixes": [
+          "https://news.solarbe.com/2"
+        ],
+        "detail": {
+          "maxFetches": 12,
+          "titleRegex": "<title>([^<]*?)(?:-索比光伏网)?</title>",
+          "titleAuthoritative": true,
+          "publishedAtSelector": ".introduction",
+          "publishedAtRegex": "(\\d{4}-\\d{2}-\\d{2}(?:\\s+\\d{2}:\\d{2}(?::\\d{2})?)?)"
+        },
+        "_aihot": {
+          "initialBackfillLimit": 10
+        }
+      },
+      "tier": "T2",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "光伏",
+        "市场"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
       "id": "gd-energy-policy",
       "name": "广东省能源局 · 通知公告",
       "kind": "web_list",
@@ -1029,33 +1063,6 @@
         "媒体",
         "储能",
         "价格"
-      ],
-      "site_fulltext": false,
-      "syndicate_fulltext": false
-    },
-    {
-      "id": "bjx-guangfu",
-      "name": "北极星光伏网",
-      "kind": "web_list",
-      "config": {
-        "url": "https://guangfu.bjx.com.cn/yw/",
-        "itemSelector": ".cc-list-content ul > li",
-        "linkSelector": "a",
-        "titleSelector": "a",
-        "publishedAtSelector": "span",
-        "allowUrlPrefixes": [
-          "https://news.bjx.com.cn/html/"
-        ],
-        "_aihot": {
-          "initialBackfillLimit": 10
-        }
-      },
-      "tier": "T2",
-      "participation_mode": "editorial",
-      "interval_minutes": 120,
-      "tags": [
-        "媒体",
-        "分布式光伏"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
