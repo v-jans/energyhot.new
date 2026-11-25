@@ -295,8 +295,30 @@ export const DEPLOYMENT = {
   /**
    * 已实测应由服务器直接连接、不走出网代理（EGRESS_PROXY_URL）的域名，采集和图片共用（选填）。
    * 每次重定向重新按目标域名选路，直连仍检查实际连接地址。
+   *
+   * 这些是国内企业的 .com/.org 站点：境外代理出口访问它们绕路且不稳，服务器直连快（2026-11-25 逐源实测健康）。
+   * 注意 iesplaza.com 不在清单里——它把腾讯云 IP 段拉黑了，必须经 r.jina.ai 从代理走。
    */
-  directFetchHosts: [] as string[],
+  directFetchHosts: [
+    "digitalpower.huawei.com",
+    "news.solarbe.com",
+    "www.360estorage.com",
+    "www.catl.com",
+    "www.cneeex.com",
+    "www.cnesa.org",
+    "www.envision-group.com",
+    "www.goldwind.com",
+    "www.ideacarbon.org",
+    "www.infolink-group.com",
+    "www.longshine.com",
+    "www.powerbeijing.com",
+    "www.pv-magazine-china.com",
+    "www.shandong-energy.com",
+    "www.sprixin.com",
+    "www.starcharge.com",
+    "www.sungrowpower.com",
+    "www.trinapower.com",
+  ] as string[],
   /**
    * 精选评测（scripts/eval-selection.ts）不带参数时用的金标集：文件（相对仓库根目录）、抽样条数、只抽哪一份、门槛扫描范围。
    * null 就用 .data/gold.jsonl 的全部样本（最多 200 条），在 40–90 之间扫描。
