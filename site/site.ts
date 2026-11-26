@@ -297,19 +297,27 @@ export const DEPLOYMENT = {
    * 每次重定向重新按目标域名选路，直连仍检查实际连接地址。
    *
    * 这些是国内企业的 .com/.org 站点：境外代理出口访问它们绕路且不稳，服务器直连快（2026-11-25 逐源实测健康）。
-   * 注意 iesplaza.com 不在清单里——它把腾讯云 IP 段拉黑了，必须经 r.jina.ai 从代理走。
+   * 2026-11-26 补入服务器上直连实测 ok 的境外行业媒体（服务器在腾讯云，这些站可直连，不必绕代理）；
+   * heatmap.news 与 iesplaza.com 不在清单——它们直连不通（拉黑或被墙），须经 r.jina.ai 或代理走。
    */
   directFetchHosts: [
     "digitalpower.huawei.com",
+    "icapcarbonaction.com",
     "news.solarbe.com",
+    "pvsyst.com",
+    "theclimategroup.org",
+    "volts.wtf",
     "www.360estorage.com",
+    "www.canarymedia.com",
     "www.catl.com",
     "www.cneeex.com",
     "www.cnesa.org",
+    "www.energy-storage.news",
     "www.envision-group.com",
     "www.goldwind.com",
     "www.ideacarbon.org",
     "www.infolink-group.com",
+    "www.latitudemedia.com",
     "www.longshine.com",
     "www.powerbeijing.com",
     "www.pv-magazine-china.com",
@@ -318,6 +326,7 @@ export const DEPLOYMENT = {
     "www.starcharge.com",
     "www.sungrowpower.com",
     "www.trinapower.com",
+    "www.utilitydive.com",
   ] as string[],
   /**
    * 精选评测（scripts/eval-selection.ts）不带参数时用的金标集：文件（相对仓库根目录）、抽样条数、只抽哪一份、门槛扫描范围。
