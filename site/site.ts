@@ -322,6 +322,7 @@ export const DEPLOYMENT = {
     "www.powerbeijing.com",
     "www.pv-magazine-china.com",
     "www.shandong-energy.com",
+    "www.solarbe.com",
     "www.sprixin.com",
     "www.starcharge.com",
     "www.sungrowpower.com",
