@@ -633,12 +633,16 @@
       "name": "IESPlaza 综合能源服务网",
       "kind": "web_list",
       "config": {
-        "url": "https://r.jina.ai/https://www.iesplaza.com/",
+        "url": "https://www.iesplaza.com/",
+        "itemSelector": "div.csp_title",
+        "linkSelector": "a",
+        "titleSelector": "a",
         "allowUrlPrefixes": [
           "https://www.iesplaza.com/article-"
         ],
         "detail": {
           "maxFetches": 12,
+          "publishedAtSelector": ".tip_laiyuan",
           "publishedAtRegex": "(\\d{4}-\\d{2}-\\d{2}(?:\\s+\\d{2}:\\d{2}(?::\\d{2})?)?)"
         },
         "_aihot": {
